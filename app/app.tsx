@@ -23,6 +23,22 @@ export default function App() {
     return (
         <div className="mx-auto flex min-h-screen max-w-5xl flex-col">
             <div className="min-h-0 flex-1 overflow-y-auto p-4">
+                <div className="mb-6 flex flex-col items-center text-center">
+                    <p className="max-w-xl text-sm text-neutral-600 dark:text-neutral-400">
+                        This example uses Memory Chat Completion to answer
+                        questions about a sample contract. The AI has access to
+                        the document and can cite sources from it.
+                    </p>
+                    <a
+                        href="/SampleContract-Shuttle.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 text-sm font-medium text-blue-600 underline hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                    >
+                        View sample contract (PDF)
+                    </a>
+                </div>
+
                 {agentTasks.map((task) => (
                     <div key={task.taskKey} className="mb-4">
                         <div className="mb-2 ml-auto w-fit max-w-[80%] rounded-lg bg-blue-500 px-3 py-2 text-right text-white dark:bg-blue-800">
