@@ -60,7 +60,7 @@ export default function App() {
                 </div>
 
                 {agentTasks.map((task) => {
-                    if (task.params.type !== 'MemoryChatCompletion') return null
+                    if (task.params.type !== 'MemoryChat') return null
                     return (
                         <div key={task.taskKey} className="mb-4">
                             <div className="mb-2 ml-auto w-fit max-w-[80%] rounded-lg bg-blue-500 px-3 py-2 text-right text-white dark:bg-blue-800">

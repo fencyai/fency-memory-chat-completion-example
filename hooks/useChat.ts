@@ -35,7 +35,7 @@ export function useChat({ model, ...agentTasksProps }: UseChatProps): UseChat {
         const newUserMsg = { role: 'USER' as const, content: trimmed }
 
         const priorMessages =
-            lastTask && lastTask.params.type === 'MemoryChatCompletion'
+            lastTask && lastTask.params.type === 'MemoryChat'
                 ? lastTask.params.messages
                 : []
 
@@ -49,13 +49,13 @@ export function useChat({ model, ...agentTasksProps }: UseChatProps): UseChat {
 
         try {
             const response = await createAgentTask({
-                type: 'MemoryChatCompletion',
+                type: 'MemoryChat',
                 messages: nextMessages,
                 model,
             })
             if (
                 response.type === 'success' &&
-                response.response.taskType === 'MemoryChatCompletion'
+                response.response.taskType === 'MemoryChat'
             ) {
                 lastAssistantRef.current = {
                     role: 'ASSISTANT',
